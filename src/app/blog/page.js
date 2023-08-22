@@ -1,11 +1,21 @@
+// import Product from "@/components/Product";
+import Product from "@/components/Product";
+import fetchProduct from "@/libs/fecthProduct";
 import React from "react";
 
-const Blog = () => {
+export default async function Blog() {
+  const posts = await fetchProduct();
+
   return (
     <div>
-      <h1>This is blog page</h1>
+      <main>
+        <h1 className="mb-6">Blog Posts</h1>
+        <div className="blogs flex flex-wrap justify-between">
+          {posts.map((post, index) => {
+            return <Product key={index} />;
+          })}
+        </div>
+      </main>
     </div>
   );
-};
-
-export default Blog;
+}
