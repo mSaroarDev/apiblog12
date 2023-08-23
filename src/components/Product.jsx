@@ -1,24 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-const Product = () => {
-  const tempImg =
-    "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg";
+const Product = ({ post }) => {
+  const { img, title, short, id } = post;
+  const shorttext = short.slice(0, 100);
 
   return (
     <div>
-      <div className="card w-80 bg-base-100 shadow-xl mb-6">
-        <figure>
-          <Image src={tempImg} alt="Shoes" width={350} height={300} />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+      <Link href={`/post/${id}`}>
+        <div className="card w-80 bg-base-100 shadow-xl mb-6">
+          <figure>
+            <Image src={img} alt="Shoes" width={350} height={300} />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{title}</h2>
+            <p>{shorttext}</p>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

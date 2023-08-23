@@ -4,10 +4,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "daisyui.com",
+        hostname: "roar.media",
       },
     ],
   },
+  distDir: "build",
 };
 
 module.exports = nextConfig;
