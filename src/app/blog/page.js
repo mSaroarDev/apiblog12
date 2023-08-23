@@ -1,4 +1,5 @@
 // import Product from "@/components/Product";
+import Footer from "@/components/Footer";
 import Product from "@/components/Product";
 import fetchProduct from "@/libs/fecthProduct";
 import React from "react";
@@ -16,6 +17,7 @@ export default async function Blog() {
           })}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

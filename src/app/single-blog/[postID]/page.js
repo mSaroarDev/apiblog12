@@ -1,5 +1,6 @@
 import postDetails from "@/libs/postDetails";
 import PostContent from "../../../components/PostContent.jsx";
+import Footer from "@/components/Footer.jsx";
 
 export default async function PostDetails({ params }) {
   const postId = params.postID;
@@ -13,7 +14,7 @@ export default async function PostDetails({ params }) {
             <div className="w-2/3 shadow-md p-6 rounded-sm">
               {post === null ? (
                 <p>
-                  This Blog content is empty from empty. Try First 4 blogs only.
+                  This Blog content is empty from API. Try First 4 blogs only.
                 </p>
               ) : (
                 <PostContent post={post} />
@@ -23,6 +24,7 @@ export default async function PostDetails({ params }) {
           </div>
         </main>
       </div>
+      <Footer />
     </>
   );
 }

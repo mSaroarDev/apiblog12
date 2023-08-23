@@ -1,11 +1,13 @@
 import React from "react";
+import Blog from "../blog/page";
+import Footer from "@/components/Footer";
 
-const Homepage = () => {
+const Home = () => {
   return (
     <div>
-      <div>This is Homepage</div>
+      <Blog />
     </div>
   );
 };
 
-export default Homepage;
+export default Home;

@@ -20,6 +20,9 @@ export default function Header() {
                   <Link href="/about">About</Link>
                 </li>
                 <li className="hover:underline duration-300">
+                  <Link href="/contact">Contact</Link>
+                </li>
+                <li className="hover:underline duration-300">
                   <Link href="/blog">Blog</Link>
                 </li>
               </ul>

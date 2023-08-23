@@ -8,7 +8,7 @@ const Product = ({ post }) => {
 
   return (
     <div>
-      <Link href={`/post/${id}`}>
+      <Link href={`/single-blog/${id}`}>
         <div className="card w-80 bg-base-100 shadow-xl mb-6">
           <figure>
             <Image src={img} alt="Shoes" width={350} height={300} />
