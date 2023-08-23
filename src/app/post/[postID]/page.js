@@ -1,13 +1,9 @@
 import postDetails from "@/libs/postDetails";
-import Image from "next/image";
+import PostContent from "../../../components/PostContent.jsx";
 
 export default async function PostDetails({ params }) {
   const postId = params.postID;
   const post = await postDetails(postId);
-
-  const { title, img, content, created_at } = post;
-  const date = new Date(created_at);
-  const time = date.toUTCString();
 
   return (
     <>
@@ -15,10 +11,13 @@ export default async function PostDetails({ params }) {
         <main className="p-6 rounded-md">
           <div className="flex justify-between items-start gap-6">
             <div className="w-2/3 shadow-md p-6 rounded-sm">
-              <h1 className="text-4xl font-bold">{title}</h1>
-              <p className="my-5">Posted On: {time}</p>
-              <Image src={img} alt={title} width={1000} height={500} />
-              <div className="content p-5">{content}</div>
+              {post === null ? (
+                <p>
+                  This Blog content is empty from empty. Try First 4 blogs only.
+                </p>
+              ) : (
+                <PostContent post={post} />
+              )}
             </div>
             <div className="w-1/3 shadow-md p-6 rounded-sm">sidebar</div>
           </div>
