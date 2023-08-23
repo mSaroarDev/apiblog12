@@ -9,7 +9,7 @@ export default async function Blog() {
   return (
     <div>
       <main>
-        <h1 className="mb-6">Blog Posts</h1>
+        <h1 className="mb-6 mt-6">Blog Posts</h1>
         <div className="blogs flex flex-wrap justify-between">
           {posts.map((post, index) => {
             return <Product key={index} post={post} />;
